@@ -1,4 +1,5 @@
 
+install git with nix-env
 git clone git@github.com:UriZafrir/nix-config-homelab.git
 cd nix-config-homelab
 mv /etc/nixos/* .
