@@ -8,7 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
     ];
+  services.vscode-server.enable = true;
+  #as non root 
+  #systemctl --user enable auto-fix-vscode-server.service
+  #systemctl --user start auto-fix-vscode-server.service
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -47,8 +52,11 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
+
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
