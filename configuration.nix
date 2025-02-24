@@ -110,6 +110,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # environment.variables = {
+  #   EDITOR = "vim";
+  # };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -122,6 +125,7 @@
     kubernetes-helm
     k9s
     k3s
+    vscode
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -142,12 +146,15 @@ services.openssh = {
   };
 };
 
-  services.k3s.enable = true;
-  services.k3s.role = "server";
-  services.k3s.extraFlags = toString [
-    # "--debug" # Optionally add additional args to k3s
-    "--disable traefik --disable servicelb --default-local-storage-path /mnt/data"
-  ];
+  services.k3s = {
+    enable = true;
+    role = "server";
+    extraFlags = [
+      "--disable=traefik"
+      "--disable=servicelb"
+      "--default-local-storage-path=/mnt/data"
+    ];
+  };
   services.vscode-server.enable = true;
 
   # Open ports in the firewall.
