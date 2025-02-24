@@ -10,15 +10,17 @@
       ./hardware-configuration.nix
       (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
     ];
-  services.vscode-server.enable = true;
-  #as non root 
+  #as non root, run this
   #systemctl --user enable auto-fix-vscode-server.service
   #systemctl --user start auto-fix-vscode-server.service
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  fileSystems."/mnt/data" = {
+    device = "/dev/sda1";
+    fsType = "auto";
+  };
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -111,6 +113,10 @@
     git
     curl
     htop
+    kubectl
+    kubernetes-helm
+    k9s
+    k3s
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -130,6 +136,15 @@ services.openssh = {
     PermitRootLogin = "yes";
   };
 };
+
+  services.k3s.enable = true;
+  services.k3s.role = "server";
+  services.k3s.extraFlags = toString [
+    # "--debug" # Optionally add additional args to k3s
+    "--disable traefik --disable servicelb --default-local-storage-path /mnt/data"
+  ];
+  services.vscode-server.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -143,5 +158,6 @@ services.openssh = {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
+
 
 }
