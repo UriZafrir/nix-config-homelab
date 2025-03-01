@@ -143,7 +143,7 @@ services.xserver = {
     wlr-randr
     gnome-randr
     ddcutil
-    terminator
+    gnome-terminal
     efibootmgr
     
   ];
