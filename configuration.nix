@@ -56,14 +56,24 @@
   };
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   # services.displayManager.sddm.enable = true;
   # services.desktopManager.plasma6.enable = true;
 
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+
+#disabled these to add below
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.enable = true;
+
+#this one
+services.xserver = {
+  enable = true;
+  displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
+};
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -129,6 +139,8 @@
     docker
     docker-compose
     waydroid
+    weston
+    wlr-randr
     terminator
     efibootmgr
   ];
