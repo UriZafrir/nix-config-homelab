@@ -15,7 +15,7 @@
   #systemctl --user start auto-fix-vscode-server.service
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   fileSystems."/mnt/data" = {
     device = "/dev/sda1";
@@ -129,6 +129,8 @@
     docker
     docker-compose
     waydroid
+    terminator
+    efibootmgr
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -177,6 +179,13 @@ networking.extraHosts =
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 virtualisation.docker.enable = true;
+virtualisation.waydroid.enable = true;  
 
+boot.loader.grub = {
+  enable = true;
+  efiSupport = true;
+  device = "nodev";
+};
+boot.loader.grub.useOSProber = true;
 
 }
