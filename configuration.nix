@@ -65,7 +65,7 @@
 #disabled these to add below
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.enable = true;
-
+  services.xserver.desktopManager.gnome.enable = true;
 #this one
 services.xserver = {
   enable = true;
@@ -141,8 +141,11 @@ services.xserver = {
     waydroid
     weston
     wlr-randr
+    gnome-randr
+    ddcutil
     terminator
     efibootmgr
+    
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
