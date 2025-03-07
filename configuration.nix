@@ -145,7 +145,10 @@ services.xserver = {
     ddcutil
     gnome-terminal
     efibootmgr
-    
+    qbittorrent
+    chromium
+    adwaita-icon-theme
+    python314
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
