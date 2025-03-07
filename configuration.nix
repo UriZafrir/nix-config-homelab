@@ -149,6 +149,7 @@ services.xserver = {
     chromium
     adwaita-icon-theme
     python314
+    zenity
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
