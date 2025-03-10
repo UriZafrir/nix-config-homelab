@@ -125,6 +125,10 @@ services.xserver = {
   # };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  environment.interactiveShellInit = ''
+    # Your .bashrc entries go here
+    alias gitall='git add . && git commit -m "update" && git push'
+  '';
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -150,6 +154,7 @@ services.xserver = {
     adwaita-icon-theme
     python314
     zenity
+    traceroute
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -188,7 +193,8 @@ services.openssh = {
    networking.firewall.enable = false;
 networking.extraHosts =
   ''
-    192.168.0.105 jellyfin.uri.cluster.gd 
+    192.168.0.105 jellyfin.uri.cluster.gd
+    #192.168.100.2 jellyfin.uri.cluster.gd 
   '';
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
