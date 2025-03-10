@@ -188,7 +188,7 @@ services.openssh = {
    networking.firewall.enable = false;
 networking.extraHosts =
   ''
-    127.0.0.1 nextcloud.uri.co.il
+    192.168.0.105 jellyfin.uri.cluster.gd 
   '';
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
