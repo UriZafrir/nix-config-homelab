@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
     ];
+  services.vscode-server.enable = true;
   #as non root, run this
   #systemctl --user enable auto-fix-vscode-server.service
   #systemctl --user start auto-fix-vscode-server.service
@@ -155,6 +156,7 @@ services.xserver = {
     python314
     zenity
     traceroute
+    kubeseal
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -184,7 +186,6 @@ services.openssh = {
       "--default-local-storage-path=/mnt/data"
     ];
   };
-  services.vscode-server.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
