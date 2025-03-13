@@ -157,6 +157,8 @@ services.xserver = {
     zenity
     traceroute
     kubeseal
+    dnsutils
+    openssl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
