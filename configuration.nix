@@ -201,6 +201,7 @@ networking.extraHosts =
     #192.168.0.105 jellyfin.uri.cluster.gd
     #192.168.100.2 in.uri.work.gd 
     192.168.100.6 in.uri.work.gd 
+    129.159.142.131 uri.work.gd
 
   '';
   # This value determines the NixOS release from which the default
