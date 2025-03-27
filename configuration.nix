@@ -142,6 +142,7 @@ services.xserver = {
     kubernetes-helm
     k9s
     k3s
+    k3d
     vscode
     docker
     docker-compose
