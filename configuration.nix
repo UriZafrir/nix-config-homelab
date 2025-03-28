@@ -162,6 +162,8 @@ services.xserver = {
     kubeseal
     dnsutils
     openssl
+	  cilium-cli
+    argocd-autopilot
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
