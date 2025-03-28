@@ -164,6 +164,8 @@ services.xserver = {
     openssl
 	  cilium-cli
     argocd-autopilot
+    kustomize
+    argocd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
