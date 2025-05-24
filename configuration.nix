@@ -163,9 +163,7 @@ services.xserver = {
     dnsutils
     openssl
 	  cilium-cli
-    argocd-autopilot
-    kustomize
-    argocd
+    minikube
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
