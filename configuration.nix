@@ -216,6 +216,7 @@ networking.extraHosts =
   system.stateVersion = "24.11"; # Did you read the comment?
 virtualisation.docker.enable = true;
 virtualisation.waydroid.enable = true;  
+virtualisation.containerd.enable = true;
 
 boot.loader.grub = {
   enable = true;
