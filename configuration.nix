@@ -164,6 +164,8 @@ services.xserver = {
     keepassxc
     go
     gnumake
+    copyq
+    vscodium-fhs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
