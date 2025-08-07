@@ -142,7 +142,6 @@ services.xserver = {
     kubernetes-helm
     k9s
     k3s
-    k3d
     vscode
     docker
     docker-compose
@@ -157,13 +156,14 @@ services.xserver = {
     chromium
     adwaita-icon-theme
     python314
-    zenity
     traceroute
-    kubeseal
     dnsutils
     openssl
-	  cilium-cli
     minikube
+    google-chrome
+    keepassxc
+    go
+    gnumake
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
