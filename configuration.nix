@@ -166,6 +166,7 @@ services.xserver = {
     gnumake
     copyq
     vscodium-fhs
+    envsubst
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
