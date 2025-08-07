@@ -141,7 +141,6 @@ services.xserver = {
     kubectl
     kubernetes-helm
     k9s
-    k3s
     vscode
     docker
     docker-compose
@@ -168,6 +167,7 @@ services.xserver = {
     vscodium-fhs
     envsubst
     jq
+    nodejs_22
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
