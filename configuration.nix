@@ -134,6 +134,7 @@ services.xserver = {
     #sudo su
   '';
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.dash-to-panel
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
@@ -171,6 +172,8 @@ services.xserver = {
     nodejs_22
     git-filter-repo
     remmina
+    flameshot
+    gnome-tweaks
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
