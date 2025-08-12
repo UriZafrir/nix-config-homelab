@@ -144,6 +144,7 @@ services.xserver = {
     kubernetes-helm
     k9s
     vscode
+    vscode.fhs
     docker
     docker-compose
     waydroid
