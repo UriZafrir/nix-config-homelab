@@ -178,8 +178,10 @@ services.xserver = {
     poetry
     python313Packages.pip
     pipx
+    rustup
     rustc
     code-cursor
+    pnpm
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
