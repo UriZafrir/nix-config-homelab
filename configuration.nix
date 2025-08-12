@@ -174,6 +174,12 @@ services.xserver = {
     remmina
     flameshot
     gnome-tweaks
+    arandr
+    poetry
+    python313Packages.pip
+    pipx
+    rustc
+    code-cursor
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
