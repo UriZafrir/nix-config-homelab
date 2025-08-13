@@ -120,6 +120,11 @@ services.xserver = {
   # Install firefox.
   programs.firefox.enable = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -181,8 +186,8 @@ services.xserver = {
     pipx
     rustup
     rustc
-    code-cursor
     pnpm
+    xdg-utils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
