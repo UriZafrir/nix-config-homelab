@@ -9,4 +9,4 @@ sudo ln -sf "$script_path"/flake.nix /etc/nixos/flake.nix
 #sudo ln -sf "$script_path"/configuration.nix /etc/nixos/configuration.nix
 #sudo ln -sf "$script_path"/home.nix ~/.config/home-manager/home.nix
 
-sudo nixos-rebuild switch --flake ".#$1"
+sudo nixos-rebuild switch --flake ".#$1" --impure 
