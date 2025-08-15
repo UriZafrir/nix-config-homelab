@@ -4,15 +4,15 @@
 
 { config, pkgs, ... }:
 
-let
-  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
-in
+# let
+#   home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
+# in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
-      (import "${home-manager}/nixos")
+      # (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
+      # (import "${home-manager}/nixos")
     ];
   services.vscode-server.enable = true;
   #as non root, run this
