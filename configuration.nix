@@ -139,48 +139,63 @@ services.xserver = {
     #sudo su
   '';
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.dash-to-panel
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #utils
+    vim 
     wget
     git
     curl
     htop
-    kubectl
-    kubernetes-helm
-    k9s
-    vscode
-    vscode.fhs
-    docker
-    docker-compose
-    waydroid
-    weston
-    wlr-randr
-    gnome-randr
-    ddcutil
-    gnome-terminal
-    efibootmgr
-    qbittorrent
-    chromium
-    adwaita-icon-theme
-    python314
+    jq
     traceroute
     dnsutils
     openssl
+    lsof
+
+    #kubernetes
+    kubectl
+    kubernetes-helm
+    k9s
+    docker
+    docker-compose
     minikube
+    vscode
+    vscode.fhs
+  
+    #weston
+    #wlr-randr
+    #ddcutil
+
+    #brightness
+    gnome-randr
+
+
+    #programs
+    qbittorrent
+    chromium
+    adwaita-icon-theme
     google-chrome
     keepassxc
+    remmina
+    flameshot
+    gnome-terminal
+    efibootmgr
+    gnomeExtensions.dash-to-panel
+    vlc
+    pamixer
+    clipit
+    zed-editor
+    tabby
+
+    #programming
+    python314
     go
     gnumake
     copyq
     vscodium-fhs
     envsubst
-    jq
     nodejs_22
     git-filter-repo
-    remmina
-    flameshot
     gnome-tweaks
-    arandr
     poetry
     python313Packages.pip
     pipx
@@ -188,6 +203,10 @@ services.xserver = {
     rustc
     pnpm
     xdg-utils
+
+    #sound
+    pavucontrol
+    alsa-utils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
