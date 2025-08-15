@@ -5,3 +5,4 @@ set -x
 script_path=$(dirname "$(realpath "$0")")
 
 sudo ln -sf "$script_path"/configuration.nix /etc/nixos/configuration.nix
+sudo ln -sf "$script_path"/home.nix ~/.config/home-manager/home.nix
