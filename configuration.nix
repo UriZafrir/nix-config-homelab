@@ -14,7 +14,7 @@
       # (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
       # (import "${home-manager}/nixos")
     ];
-  services.vscode-server.enable = true;
+  # services.vscode-server.enable = true;
   #as non root, run this
   #systemctl --user enable auto-fix-vscode-server.service
   #systemctl --user start auto-fix-vscode-server.service
