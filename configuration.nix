@@ -180,7 +180,7 @@ services.xserver = {
     clipit
     zed-editor
     tabby
-    home-manager
+    #home-manager
 
     #programming
     python314

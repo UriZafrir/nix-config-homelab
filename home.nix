@@ -5,10 +5,10 @@
   # paths it should manage.
   home.username = "uri";
   home.homeDirectory = "/home/uri";
-  
-  home.file = {
-    ".bashrc".source = mkOutOfStoreSymlink /home/uri/dotfiles/.bashrc;
-  };
+
+#   home.file = {
+#     ".bashrc".source = mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.bashrc;
+#   };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
