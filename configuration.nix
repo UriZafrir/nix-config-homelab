@@ -44,7 +44,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -64,10 +63,7 @@
   # services.desktopManager.plasma6.enable = true;
 
 
-#disabled these to add below
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+services.xserver.desktopManager.gnome.enable = true;
 #this one
 services.xserver = {
   enable = true;
@@ -117,8 +113,6 @@ services.xserver = {
     
   };
   security.sudo.wheelNeedsPassword = false;
-  # Install firefox.
-  programs.firefox.enable = true;
 
   programs.appimage = {
     enable = true;
@@ -135,8 +129,6 @@ services.xserver = {
   # $ nix search wget
   environment.interactiveShellInit = ''
     # Your .bashrc entries go here
-    alias gitall='git add . && git commit -m "update" && git push'
-    #sudo su
   '';
   environment.systemPackages = with pkgs; [
     #utils
@@ -168,8 +160,8 @@ services.xserver = {
     #brightness
     gnome-randr
 
-
     #programs
+    firefox
     qbittorrent
     chromium
     adwaita-icon-theme
@@ -220,12 +212,12 @@ services.xserver = {
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-services.openssh = {
-  enable = true;
-  settings = {
-    PermitRootLogin = "yes";
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "yes";
+    };
   };
-};
 
   services.k3s = {
     enable = false;
@@ -241,15 +233,12 @@ services.openssh = {
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-   networking.firewall.enable = false;
-networking.extraHosts =
-  ''
-    #192.168.0.105 jellyfin.uri.cluster.gd
-    #192.168.100.2 in.uri.work.gd 
-    192.168.100.6 in.uri.work.gd 
-    129.159.142.131 uri.work.gd
+  networking.firewall.enable = false;
+  networking.extraHosts =
+    ''
+      #192.168.0.105 jellyfin.uri.cluster.gd
 
-  '';
+    '';
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -257,9 +246,8 @@ networking.extraHosts =
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-virtualisation.docker.enable = true;
-virtualisation.waydroid.enable = true;  
-virtualisation.containerd.enable = true;
+  virtualisation.docker.enable = true;
+  virtualisation.waydroid.enable = true;  
 
 boot.loader.grub = {
   enable = true;
