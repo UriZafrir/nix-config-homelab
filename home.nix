@@ -9,6 +9,16 @@
   home.file = {
     ".bashrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.bashrc;
   };
+  
+  xdg.desktopEntries.xrandr-brightness-adjuster = {
+    name = "xrandr-brightness-adjuster";
+    genericName = "Custom Application";
+    exec = "/home/uri/AppImages/xrandr-brightness-adjuster";
+    #icon = "/full/path/to/icon.png";
+    #terminal = false;
+    categories = [ "Utility" ];
+    type = "Application";
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
