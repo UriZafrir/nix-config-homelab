@@ -201,6 +201,7 @@ services.xserver = {
     rustc
     pnpm
     xdg-utils
+    yarn
 
     #sound
     pavucontrol
@@ -242,8 +243,11 @@ services.xserver = {
   networking.firewall.enable = false;
   networking.extraHosts =
     ''
-      #192.168.0.105 jellyfin.uri.cluster.gd
-
+      127.0.0.1 dex
+      127.0.0.1 minio
+      127.0.0.1 postgres
+      127.0.0.1 mysql
+      127.0.0.1 azurite
     '';
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
