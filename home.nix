@@ -8,6 +8,7 @@
 
   home.file = {
     ".bashrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.bashrc;
+    ".vimrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.vimrc;
   };
   
   xdg.desktopEntries.xrandr-brightness-adjuster = {
@@ -19,6 +20,10 @@
     categories = [ "Utility" ];
     type = "Application";
   };
+  
+#   home.sessionVariables = {
+#     EDITOR = "vim";
+#   };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

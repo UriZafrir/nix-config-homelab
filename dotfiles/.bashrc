@@ -11,3 +11,4 @@ PATH=$PATH:$HOME/symlinks
 alias gc='git clone'
 #/home/uri/AppImages/xrandr-brightness-adjuster &
 export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
+export EDITOR="vim"
