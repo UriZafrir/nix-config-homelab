@@ -150,6 +150,7 @@ services.xserver = {
     kubectl
     kubernetes-helm
     k9s
+    k3d
     docker
     docker-compose
     minikube
@@ -181,6 +182,7 @@ services.xserver = {
     zed-editor
     tabby
     #home-manager
+    
 
     #programming
     python314
