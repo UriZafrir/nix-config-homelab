@@ -1,1 +1,1 @@
-mouse -v
+set mouse=a

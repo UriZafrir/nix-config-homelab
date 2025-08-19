@@ -67,15 +67,14 @@
   # services.desktopManager.plasma6.enable = true;
 
 
-services.xserver.desktopManager.gnome.enable = true;
-#this one
-services.xserver = {
+services.desktopManager.gnome.enable = true;
+
+services.displayManager.gdm = {
   enable = true;
-  displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
+  wayland = true;
 };
+
+services.xserver.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -87,7 +86,7 @@ services.xserver = {
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -181,7 +180,7 @@ services.xserver = {
     clipit
     zed-editor
     tabby
-    #home-manager
+    i3
     
 
     #programming
