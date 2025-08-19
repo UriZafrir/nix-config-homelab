@@ -6,12 +6,17 @@
   home.username = "uri";
   home.homeDirectory = "/home/uri";
 
+  # home.file = {
+  #   ".bashrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.bashrc;
+  #   ".vimrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.vimrc;
+  #   ".imwheelrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.imwheelrc;
+  # };
   home.file = {
-    ".bashrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.bashrc;
-    ".vimrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.vimrc;
-    ".imwheelrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.imwheelrc;
+    ".bashrc".source = ./dotfiles/.bashrc;
+    ".vimrc".source = ./dotfiles/.vimrc;
+    ".imwheelrc".source = ./dotfiles/.imwheelrc;
   };
-  
+
   xdg.desktopEntries.xrandr-brightness-adjuster = {
     name = "xrandr-brightness-adjuster";
     genericName = "Custom Application";
