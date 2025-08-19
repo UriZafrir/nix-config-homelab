@@ -27,9 +27,13 @@
     type = "Application";
   };
   
-#   home.sessionVariables = {
-#     EDITOR = "vim";
-#   };
+
+  programs.git = {
+    enable = true;
+    userName = "Uri Zafrir";
+    userEmail = "urizaf@gmail.com";
+  };
+
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
