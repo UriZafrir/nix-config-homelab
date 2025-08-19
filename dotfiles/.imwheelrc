@@ -1,0 +1,6 @@
+#need to run imwheel for this to work,
+#this is for debugging:
+#imwheel -d --debug --kill
+".*"
+None,      Up,   Button4, 2
+None,      Down, Button5, 2

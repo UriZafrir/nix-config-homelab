@@ -144,6 +144,7 @@ services.xserver.enable = true;
     dnsutils
     openssl
     lsof
+    imwheel
 
     #kubernetes
     kubectl

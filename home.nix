@@ -9,6 +9,7 @@
   home.file = {
     ".bashrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.bashrc;
     ".vimrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.vimrc;
+    ".imwheelrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.imwheelrc;
   };
   
   xdg.desktopEntries.xrandr-brightness-adjuster = {
