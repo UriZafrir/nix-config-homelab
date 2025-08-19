@@ -34,6 +34,16 @@
     userEmail = "urizaf@gmail.com";
   };
 
+  xdg.autostart.enable = true;
+
+  # xdg.autostart.entries ends up in ll ~/.config/autostart/
+  # ll /run/current-system/sw/share/applications/
+  xdg.autostart.entries = [
+    "${pkgs.flameshot}/share/applications/org.flameshot.Flameshot.desktop"
+    "${pkgs.copyq}/share/applications/com.github.hluk.copyq.desktop"
+    "${pkgs.keepassxc}/share/applications/org.keepassxc.KeePassXC.desktop"
+    "${pkgs.gnome-terminal}/share/applications/org.gnome.Terminal.desktop"
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
