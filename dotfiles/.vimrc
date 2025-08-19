@@ -1,1 +1,1 @@
-set mouse=a
+set mouse=v
