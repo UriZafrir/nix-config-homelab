@@ -26,6 +26,12 @@
     device = "/dev/sda1";
     fsType = "auto";
   };
+
+  system.activationScripts.setDataPerms.text = ''
+  chown -R root:users /mnt/data
+  chmod -R 770 /mnt/data
+  '';
+  
   nix = {
     package = pkgs.nixVersions.stable;
     extraOptions = ''
