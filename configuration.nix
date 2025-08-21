@@ -183,6 +183,7 @@ services.xserver.enable = true;
     zed-editor
     tabby
     i3
+    qdirstat
 
     #programming
     python314
