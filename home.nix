@@ -17,6 +17,8 @@
     ".imwheelrc".source = ./dotfiles/.imwheelrc;
     ".gitconfig".source = ./dotfiles/.gitconfig;
     ".npmrc".source = ./dotfiles/.npmrc;
+    ".config/k9s/skins/transparent.yaml".source = ./dotfiles/k9s/transparent.yaml;
+    ".config/k9s/config.yaml".source = ./dotfiles/k9s/config.yaml;
   };
 
   xdg.desktopEntries.xrandr-brightness-adjuster = {

@@ -27,10 +27,9 @@
     fsType = "auto";
   };
 
-  system.activationScripts.setDataPerms.text = ''
-  chown -R root:users /mnt/data
-  chmod -R 770 /mnt/data
-  '';
+  # system.activationScripts.setDataPerms.text = ''
+  # chown -R uri:users /mnt/data
+  # '';
   
   nix = {
     package = pkgs.nixVersions.stable;
@@ -157,6 +156,7 @@ services.xserver.enable = true;
     docker
     docker-compose
     minikube
+    tree
   
     #weston
     #wlr-randr
