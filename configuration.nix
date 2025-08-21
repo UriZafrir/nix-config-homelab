@@ -190,8 +190,10 @@ services.xserver.enable = true;
     go
     gnumake
     copyq
-    vscodium-fhs
-    vscode-fhs
+    # vscodium-fhs
+    # vscode-fhs
+    vscodium
+    vscode
     envsubst
     nodejs_22
     git-filter-repo

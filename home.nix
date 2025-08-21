@@ -15,6 +15,8 @@
     ".bashrc".source = ./dotfiles/.bashrc;
     ".vimrc".source = ./dotfiles/.vimrc;
     ".imwheelrc".source = ./dotfiles/.imwheelrc;
+    ".gitconfig".source = ./dotfiles/.gitconfig;
+    ".npmrc".source = ./dotfiles/.npmrc;
   };
 
   xdg.desktopEntries.xrandr-brightness-adjuster = {
