@@ -148,7 +148,7 @@ services.xserver.enable = true;
     openssl
     lsof
     imwheel
-
+    killall
     #kubernetes
     kubectl
     kubernetes-helm
@@ -157,8 +157,6 @@ services.xserver.enable = true;
     docker
     docker-compose
     minikube
-    vscode
-    vscode.fhs
   
     #weston
     #wlr-randr
@@ -185,7 +183,6 @@ services.xserver.enable = true;
     zed-editor
     tabby
     i3
-    
 
     #programming
     python314
@@ -193,6 +190,7 @@ services.xserver.enable = true;
     gnumake
     copyq
     vscodium-fhs
+    vscode-fhs
     envsubst
     nodejs_22
     git-filter-repo
@@ -270,4 +268,14 @@ boot.loader.grub = {
 };
 boot.loader.grub.useOSProber = true;
 #boot.kernelPackages = pkgs.linuxPackages_latest
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true; # Show battery charge of Bluetooth devices
+      };
+    };
+  };
+  hardware.enableAllFirmware = true;
 }
