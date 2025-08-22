@@ -227,6 +227,7 @@ services.xserver.enable = true;
     enable = true;
     settings = {
       PermitRootLogin = "yes";
+      X11Forwarding = true;
     };
   };
 
