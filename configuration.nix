@@ -213,6 +213,14 @@ services.xserver.enable = true;
     pavucontrol
     alsa-utils
   ];
+  # services.nfs.server = {
+  #     enable = true;
+
+  #     # Export the desired directory
+  #     exports = ''
+  #       /mnt/data/general 192.168.0.0/16(rw,sync,no_subtree_check)
+  #     '';
+  #   };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
