@@ -18,6 +18,8 @@
   #as non root, run this
   #systemctl --user enable auto-fix-vscode-server.service
   #systemctl --user start auto-fix-vscode-server.service
+  #https://nixos.wiki/wiki/Visual_Studio_Code
+  programs.nix-ld.enable = true;
 
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
