@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-XRANDR_COMMAND="echo 'Screen unlocked! Running xrandr command...' && echo 'hi'"
-
+set -x
 echo "Starting D-Bus monitor for screen unlock events..."
 
 dbus-monitor --session "type='signal',interface='org.gnome.ScreenSaver',member='ActiveChanged'" | \
