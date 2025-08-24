@@ -19,7 +19,26 @@
     ".npmrc".source = ./dotfiles/.npmrc;
     ".config/k9s/skins/transparent.yaml".source = ./dotfiles/k9s/transparent.yaml;
     ".config/k9s/config.yaml".source = ./dotfiles/k9s/config.yaml;
+    ".scripts/screen-unlock-monitor.sh".source = ./scripts/screen-unlock-monitor.sh;
   };
+
+  systemd.user.services.screen-unlock-monitor = {
+      Unit = {
+        Description = "Run a command when screen is unlocked (GNOME/X11)";
+        After = [ "graphical-session.target" ];
+      };
+      Service = {
+        ExecStart = "%h/.scripts/screen-unlock-monitor.sh";
+        Restart = "always";
+        RestartSec = 2;
+        StandardOutput = "journal";
+        StandardError = "journal";
+      };
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
+    };
+
 
   xdg.desktopEntries.xrandr-brightness-adjuster = {
     name = "xrandr-brightness-adjuster";
