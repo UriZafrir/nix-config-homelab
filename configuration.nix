@@ -180,6 +180,7 @@ services.xserver.enable = true;
     gnome-terminal
     efibootmgr
     gnomeExtensions.dash-to-panel
+    gnomeExtensions.tiling-shell
     vlc
     pamixer
     clipit
@@ -282,7 +283,7 @@ boot.loader.grub = {
   device = "nodev";
 };
 boot.loader.grub.useOSProber = true;
-#boot.kernelPackages = pkgs.linuxPackages_latest
+boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
