@@ -192,7 +192,7 @@ services.xserver.enable = true;
     # openjfx24
     # zulu24
     pdfmixtool
-    
+
     #programming
     python314
     go
@@ -214,6 +214,7 @@ services.xserver.enable = true;
     pnpm
     xdg-utils
     yarn
+    kubeseal
 
     #sound
     pavucontrol
