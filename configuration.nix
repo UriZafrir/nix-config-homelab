@@ -188,7 +188,11 @@ services.xserver.enable = true;
     tabby
     i3
     qdirstat
-
+    # pdfsam-basic
+    # openjfx24
+    # zulu24
+    pdfmixtool
+    
     #programming
     python314
     go
