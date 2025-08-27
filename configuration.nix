@@ -215,6 +215,7 @@ services.xserver.enable = true;
     xdg-utils
     yarn
     kubeseal
+    runc
 
     #sound
     pavucontrol
