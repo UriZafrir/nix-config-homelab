@@ -194,6 +194,7 @@ services.xserver.enable = true;
     pdfmixtool
 
     #programming
+    gcc
     python314
     go
     gnumake
