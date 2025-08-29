@@ -217,6 +217,7 @@ services.xserver.enable = true;
     yarn
     kubeseal
     runc
+    node-gyp
 
     #sound
     pavucontrol
