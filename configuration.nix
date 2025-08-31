@@ -218,7 +218,7 @@ services.xserver.enable = true;
     kubeseal
     runc
     node-gyp
-    nur.repos.charmbracelet.crush
+
     #sound
     pavucontrol
     alsa-utils
