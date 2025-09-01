@@ -50,6 +50,15 @@
     type = "Application";
   };
   
+  xdg.desktopEntries.imwheel = {
+    name = "imwheel";
+    genericName = "Custom Application";
+    exec = "/run/current-system/sw/bin/imwheel";
+    #icon = "/full/path/to/icon.png";
+    #terminal = false;
+    categories = [ "Utility" ];
+    type = "Application";
+  };
 
   programs.git = {
     enable = true;
@@ -66,6 +75,7 @@
     "${pkgs.copyq}/share/applications/com.github.hluk.copyq.desktop"
     "${pkgs.keepassxc}/share/applications/org.keepassxc.KeePassXC.desktop"
     "${pkgs.gnome-terminal}/share/applications/org.gnome.Terminal.desktop"
+    "${pkgs.imwheel}/share/applications/imwheel.desktop"
   ];
 
   # This value determines the Home Manager release that your
