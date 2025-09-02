@@ -218,6 +218,7 @@ services.xserver.enable = true;
     kubeseal
     runc
     node-gyp
+    step-cli
 
     #sound
     pavucontrol
