@@ -193,7 +193,6 @@ services.xserver.enable = true;
     # zulu24
     pdfmixtool
     nettools
-    direnv
     
     #programming
     gcc
@@ -244,6 +243,7 @@ services.xserver.enable = true;
   # };
 
   # List services that you want to enable:
+  programs.direnv.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh = {
