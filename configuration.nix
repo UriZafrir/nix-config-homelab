@@ -192,6 +192,7 @@ services.xserver.enable = true;
     # openjfx24
     # zulu24
     pdfmixtool
+    nettools
 
     #programming
     gcc
