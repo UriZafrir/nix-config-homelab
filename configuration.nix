@@ -193,7 +193,8 @@ services.xserver.enable = true;
     # zulu24
     pdfmixtool
     nettools
-
+    direnv
+    
     #programming
     gcc
     python314
