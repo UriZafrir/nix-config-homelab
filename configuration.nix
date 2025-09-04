@@ -193,6 +193,7 @@ services.xserver.enable = true;
     # zulu24
     pdfmixtool
     nettools
+    uv
     
     #programming
     gcc
