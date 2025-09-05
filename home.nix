@@ -13,6 +13,7 @@
   # };
   home.file = {
     ".bashrc".source = ./dotfiles/.bashrc;
+    ".bash_profile".source = ./dotfiles/.bash_profile;
     ".vimrc".source = ./dotfiles/.vimrc;
     ".imwheelrc".source = ./dotfiles/.imwheelrc;
     ".gitconfig".source = ./dotfiles/.gitconfig;
