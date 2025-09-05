@@ -194,7 +194,7 @@ services.xserver.enable = true;
     pdfmixtool
     nettools
     uv
-    
+
     #programming
     gcc
     python314
@@ -221,7 +221,9 @@ services.xserver.enable = true;
     runc
     node-gyp
     step-cli
-
+    libffi
+    pkg-config
+    
     #sound
     pavucontrol
     alsa-utils
