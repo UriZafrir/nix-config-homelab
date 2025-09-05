@@ -223,6 +223,7 @@ services.xserver.enable = true;
     step-cli
     libffi
     pkg-config
+    tmux
     
     #sound
     pavucontrol
