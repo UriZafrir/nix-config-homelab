@@ -224,6 +224,8 @@ services.xserver.enable = true;
     libffi
     pkg-config
     tmux
+    skypilot
+    file
     
     #sound
     pavucontrol
