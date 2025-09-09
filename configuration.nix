@@ -226,6 +226,9 @@ services.xserver.enable = true;
     tmux
     skypilot
     file
+    gparted
+    ncdu
+    unzip
     
     #sound
     pavucontrol
