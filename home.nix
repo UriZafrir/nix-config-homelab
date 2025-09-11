@@ -40,6 +40,25 @@
       };
     };
 
+  systemd.user.services.imwheel = {
+    Unit = {
+      Description = "IMWheel";
+      Wants = [ "graphical-session.target" ];   # For user services, better to use graphical-session.target
+      After = [ "graphical-session.target" ];
+    };
+    Service = {
+      Type = "simple";
+    Environment = ''
+      DISPLAY=:0
+      XAUTHORITY=/run/user/1000/gdm/Xauthority
+    '';
+      ExecStart = "/run/current-system/sw/bin/imwheel -d";
+      ExecStop = "/run/current-system/sw/bin/pkill imwheel";
+      RemainAfterExit = "yes";
+    };
+    Install.WantedBy = [ "default.target" ];
+  };
+
 
   xdg.desktopEntries.xrandr-brightness-adjuster = {
     name = "xrandr-brightness-adjuster";
