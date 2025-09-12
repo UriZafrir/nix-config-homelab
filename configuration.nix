@@ -49,6 +49,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  #to use proxmox with wifi we need these:
   #bridge for proxmox
   networking = {
     bridges.vmbr0 = {
