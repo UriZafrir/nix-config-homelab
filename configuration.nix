@@ -60,6 +60,11 @@
       address = "192.168.200.1";
       prefixLength = 24;
     }];
+    #for localCommands need to use sudo systemctl restart NetworkManager.service, didnt work so i did manually, then checked using cat /sys/class/net/vmbr0/bridge/forward_delay
+    localCommands = '' 
+      ip link set dev vmbr0 type bridge forward_delay 0
+    '';
+  };
   #ipforwarding for proxmox  
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = true;
@@ -68,7 +73,7 @@
   networking.firewall.extraCommands = ''
     iptables -t nat -A POSTROUTING -s 192.168.200.0/24 ! -d 192.168.200.0/24 -j MASQUERADE
   '';
-  
+
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
 
