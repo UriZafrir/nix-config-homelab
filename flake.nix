@@ -38,6 +38,7 @@
             services.proxmox-ve = {
               enable = true;
               ipAddress = "192.168.0.105";  # Change to your host IP
+              bridges = [ "vmbr0" ];
             };
           })
         ];
