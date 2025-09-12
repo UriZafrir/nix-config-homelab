@@ -63,6 +63,10 @@
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = true;
   };
+  #nat masquerade for proxmox
+  networking.firewall.extraCommands = ''
+    iptables -t nat -A POSTROUTING -s 192.168.200.0/24 ! -d 192.168.200.0/24 -j MASQUERADE
+  '';
   
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
@@ -209,6 +213,7 @@ services.xserver.enable = true;
     pdfmixtool
     nettools
     uv
+    iptables
 
     #programming
     gcc
@@ -292,7 +297,16 @@ services.xserver.enable = true;
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+    # Allow all incoming connections by allowing all TCP and UDP ports
+    allowedTCPPorts = [ ];
+    allowedUDPPorts = [ ];
+    # Or explicitly allow everything by disabling filtering (not recommended for production)
+    # You could also add a passthrough rule or set the default policy accept
+    # But NixOS firewall doesn't support a simple "open all" toggle, so empty allowed ports means open all
+    # However, if you want no filtering, simplest is to disable firewall: enable = false
+  };  
   networking.extraHosts =
     ''
     '';
