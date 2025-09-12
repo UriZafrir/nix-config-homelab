@@ -49,6 +49,18 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  #bridge for proxmox
+  networking = {
+    bridges.vmbr0 = {
+      interfaces = [];
+    };
+    interfaces.vmbr0.useDHCP = false;
+    interfaces.vmbr0.ipv4.addresses = [{
+      address = "192.168.200.1";
+      prefixLength = 24;
+    }];
+  };
+  
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
 

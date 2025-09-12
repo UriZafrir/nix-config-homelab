@@ -10,7 +10,8 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-amd" "bridge" "br_netfilter" ]; # "bridge" "br_netfilter" needed for proxmox bridge
+
   boot.extraModulePackages = [ ];
   boot.kernelParams = ["amdgpu.backlight=0" "acpi_backlight=none"];
 
