@@ -9,17 +9,22 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Add Proxmox VE input
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nur, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nur, proxmox-nixos, ... }: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = { inherit nur; };
         modules = [
           ./configuration.nix
           {
-            nixpkgs.overlays = [ nur.overlays.default ];
+            nixpkgs.overlays = [ 
+              nur.overlays.default 
+              proxmox-nixos.overlays.${system}
+            ];
           }
           home-manager.nixosModules.home-manager
           {
@@ -27,6 +32,14 @@
             home-manager.useUserPackages = true;
             home-manager.users.uri = ./home.nix;
           }
+          proxmox-nixos.nixosModules.proxmox-ve
+          # Proxmox VE configuration
+          ({ pkgs, lib, ... }: {
+            services.proxmox-ve = {
+              enable = true;
+              ipAddress = "192.168.0.105";  # Change to your host IP
+            };
+          })
         ];
       };
     };
