@@ -59,6 +59,9 @@
       address = "192.168.200.1";
       prefixLength = 24;
     }];
+  #ipforwarding for proxmox  
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = true;
   };
   
   # Set your time zone.
