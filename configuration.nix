@@ -257,7 +257,7 @@ services.xserver.enable = true;
     unzip
     newt # for proxmox
     cdrkit # for proxmox
-    
+    cilium-cli
     #sound
     pavucontrol
     alsa-utils
@@ -298,6 +298,9 @@ services.xserver.enable = true;
       "--disable=traefik"
       "--disable=servicelb"
       "--default-local-storage-path=/mnt/data"
+      "--flannel-backend=none" 
+      "--disable-kube-proxy"
+      "--disable-network-policy"
     ];
   };
 
