@@ -259,7 +259,7 @@ services.xserver.enable = true;
     cdrkit # for proxmox
     cilium-cli
     xclip # use with xclip -out -selection primary | xclip -in -selection clipboard
-
+    dconf-editor
 
     #sound
     pavucontrol
@@ -301,8 +301,8 @@ services.xserver.enable = true;
       "--disable=traefik"
       "--disable=servicelb"
       "--default-local-storage-path=/mnt/data"
-      "--flannel-backend=none" 
-      "--disable-network-policy"
+      # "--flannel-backend=none" 
+      # "--disable-network-policy"
       # "--disable-kube-proxy"
     ];
   };
