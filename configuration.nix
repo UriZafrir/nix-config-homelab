@@ -255,6 +255,8 @@ services.xserver.enable = true;
     gparted
     ncdu
     unzip
+    newt # for proxmox
+    cdrkit # for proxmox
     
     #sound
     pavucontrol
