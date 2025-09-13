@@ -258,6 +258,9 @@ services.xserver.enable = true;
     newt # for proxmox
     cdrkit # for proxmox
     cilium-cli
+    xclip # use with xclip -out -selection primary | xclip -in -selection clipboard
+
+
     #sound
     pavucontrol
     alsa-utils
@@ -299,8 +302,8 @@ services.xserver.enable = true;
       "--disable=servicelb"
       "--default-local-storage-path=/mnt/data"
       "--flannel-backend=none" 
-      "--disable-kube-proxy"
       "--disable-network-policy"
+      # "--disable-kube-proxy"
     ];
   };
 
