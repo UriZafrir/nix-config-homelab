@@ -28,10 +28,10 @@ k9s:
       namespaces: []
       labels: {}
   logger:
-    tail: 100
+    tail: 5000
     buffer: 5000
     sinceSeconds: -1
-    textWrap: false
+    textWrap: true
     showTime: false
   thresholds:
     cpu:
