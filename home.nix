@@ -60,6 +60,25 @@
     Install.WantedBy = [ "default.target" ];
   };
 
+systemd.user.services.xclip-sync = {
+  Unit = {
+    Description = "Sync PRIMARY selection to CLIPBOARD using xclip";
+    Wants = [ "graphical.target" ];  # better user target
+    After = [ "graphical.target" ];
+  };
+
+  Service = {
+    Type = "oneshot";
+    Environment = ''
+      DISPLAY=:0
+    '';
+    ExecStart = "/bin/sh -c \"xclip -out -selection primary | xclip -in -selection clipboard\"";
+  };
+
+  Install = {
+    WantedBy = [ "default.target" ];
+  };
+};
 
   xdg.desktopEntries.xrandr-brightness-adjuster = {
     name = "xrandr-brightness-adjuster";
