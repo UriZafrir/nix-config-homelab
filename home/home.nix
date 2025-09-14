@@ -12,16 +12,16 @@
   #   ".imwheelrc".source = config.lib.file.mkOutOfStoreSymlink /home/uri/general/nix-config-homelab/dotfiles/.imwheelrc;
   # };
   home.file = {
-    ".bashrc".source = ./dotfiles/.bashrc;
-    ".bash_profile".source = ./dotfiles/.bash_profile;
-    ".vimrc".source = ./dotfiles/.vimrc;
-    ".imwheelrc".source = ./dotfiles/.imwheelrc;
-    ".gitconfig".source = ./dotfiles/.gitconfig;
-    ".npmrc".source = ./dotfiles/.npmrc;
-    ".config/k9s/skins/transparent.yaml".source = ./dotfiles/k9s/transparent.yaml;
-    ".config/k9s/config.yaml".source = ./dotfiles/k9s/config.yaml;
-    ".config/k9s/plugins/log-full.yaml".source = ./dotfiles/k9s/log-full.yaml;
-    ".scripts/screen-unlock-monitor.sh".source = ./scripts/screen-unlock-monitor.sh;
+    ".bashrc".source = ../dotfiles/.bashrc;
+    ".bash_profile".source = ../dotfiles/.bash_profile;
+    ".vimrc".source = ../dotfiles/.vimrc;
+    ".imwheelrc".source = ../dotfiles/.imwheelrc;
+    ".gitconfig".source = ../dotfiles/.gitconfig;
+    ".npmrc".source = ../dotfiles/.npmrc;
+    ".config/k9s/skins/transparent.yaml".source = ../dotfiles/k9s/transparent.yaml;
+    ".config/k9s/config.yaml".source = ../dotfiles/k9s/config.yaml;
+    ".config/k9s/plugins/log-full.yaml".source = ../dotfiles/k9s/log-full.yaml;
+    ".scripts/screen-unlock-monitor.sh".source = ../scripts/screen-unlock-monitor.sh;
   };
 
   systemd.user.services.screen-unlock-monitor = {
