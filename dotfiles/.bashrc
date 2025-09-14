@@ -1,4 +1,4 @@
-xrandr --output HDMI-1 --brightness 0.3
+xrandr --output HDMI-1 --brightness 0.23
 alias ll='ls -la'
 #export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 export KUBECONFIG=~/.kube/config

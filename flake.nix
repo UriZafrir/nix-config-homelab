@@ -19,7 +19,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit nur; };
         modules = [
-          ./configuration.nix
+        ./hosts/home-lab/configuration.nix
           {
             nixpkgs.overlays = [ 
               nur.overlays.default 
@@ -30,7 +30,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.uri = ./home.nix;
+            home-manager.users.uri = ./home/home.nix;
           }
           proxmox-nixos.nixosModules.proxmox-ve
           # Proxmox VE configuration
