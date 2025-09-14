@@ -80,10 +80,10 @@
     enable = true;
     settings = {
     # Add the 'proxmox' domain resolving to your host IP reachable by VMs/containers
-    # address = "/proxmox/192.168.0.105";
+    address = "/proxmox/192.168.0.105";
     # Bind dnsmasq to your bridge interface vmbr0
     interface = "vmbr0";
-    bind-interfaces = true; # Only bind to the specified interface
+    # bind-interfaces = true; # Only bind to the specified interface
     # Define the DHCP IP address range, netmask, and lease time (e.g., 24h)
     dhcp-range = "192.168.200.2,192.168.200.254,24h";
     # Specify the router IP (default gateway) for dhcp clients
