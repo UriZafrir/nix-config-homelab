@@ -7,6 +7,7 @@ GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/symlinks
 PATH=$PATH:$HOME/.cargo/bin/
+PATH=/home/uri/.local/bin:$PATH
 alias gc='git clone'
 #/home/uri/AppImages/xrandr-brightness-adjuster &
 export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'

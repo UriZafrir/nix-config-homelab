@@ -238,7 +238,8 @@ services.xserver.enable = true;
     nettools
     uv
     iptables
-
+    postgresql
+    
     #programming
     gcc
     python314
