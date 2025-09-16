@@ -239,7 +239,9 @@ services.xserver.enable = true;
     uv
     iptables
     postgresql
-    
+    azure-cli
+    (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
+    terraform
     #programming
     gcc
     python314
@@ -279,7 +281,8 @@ services.xserver.enable = true;
     cilium-cli
     xclip # use with xclip -out -selection primary | xclip -in -selection clipboard
     dconf-editor
-
+    inetutils
+    
     #sound
     pavucontrol
     alsa-utils
