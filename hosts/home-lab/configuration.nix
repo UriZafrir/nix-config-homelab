@@ -282,7 +282,8 @@ services.xserver.enable = true;
     xclip # use with xclip -out -selection primary | xclip -in -selection clipboard
     dconf-editor
     inetutils
-    
+    vte
+
     #sound
     pavucontrol
     alsa-utils
@@ -345,6 +346,7 @@ services.xserver.enable = true;
   };  
   networking.extraHosts =
     ''
+      51.4.64.181 uri.work.gd 
     '';
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
