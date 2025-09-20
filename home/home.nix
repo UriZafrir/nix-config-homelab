@@ -24,6 +24,16 @@
     ".scripts/screen-unlock-monitor.sh".source = ../scripts/screen-unlock-monitor.sh;
   };
 
+  #this is for setting alt+shift as keyboard shotcut for language switch
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/input-sources" = {
+        xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "grp:alt_shift_toggle" ];
+      };
+    };
+  };
+  
   systemd.user.services.screen-unlock-monitor = {
       Unit = {
         Description = "Run a command when screen is unlocked (GNOME/X11)";
