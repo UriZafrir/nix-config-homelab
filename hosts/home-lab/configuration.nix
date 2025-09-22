@@ -283,6 +283,11 @@ services.xserver.enable = true;
     dconf-editor
     inetutils
     vte
+    librechat
+    #for witsy
+    dpkg
+    fakeroot
+    zip
 
     #sound
     pavucontrol
