@@ -52,44 +52,44 @@
   #https://github.com/ThomasRives/Proxmox-over-wifi
   #to use proxmox with wifi we need these:
   #bridge for proxmox
-  networking = {
-    bridges.vmbr0 = {
-      interfaces = [];
-    };
-    interfaces.vmbr0.useDHCP = false;
-    interfaces.vmbr0.ipv4.addresses = [{
-      address = "192.168.200.1";
-      prefixLength = 24;
-    }];
-    #for localCommands need to use sudo systemctl restart NetworkManager.service, didnt work so i did manually, then checked using cat /sys/class/net/vmbr0/bridge/forward_delay
-    localCommands = '' 
-      ip link set dev vmbr0 type bridge forward_delay 0
-    '';
-  };
-  #ipforwarding for proxmox  
-  boot.kernel.sysctl = {
-    "net.ipv4.ip_forward" = true;
-  };
-  #nat masquerade for proxmox
-  networking.firewall.extraCommands = ''
-    iptables -t nat -A POSTROUTING -s 192.168.200.0/24 -o wlo1 -j MASQUERADE
-    iptables -t raw -I PREROUTING -i fwbr+ -j CT --zone 1
-  '';
+  # networking = {
+  #   bridges.vmbr0 = {
+  #     interfaces = [];
+  #   };
+  #   interfaces.vmbr0.useDHCP = false;
+  #   interfaces.vmbr0.ipv4.addresses = [{
+  #     address = "192.168.200.1";
+  #     prefixLength = 24;
+  #   }];
+  #   #for localCommands need to use sudo systemctl restart NetworkManager.service, didnt work so i did manually, then checked using cat /sys/class/net/vmbr0/bridge/forward_delay
+  #   localCommands = '' 
+  #     ip link set dev vmbr0 type bridge forward_delay 0
+  #   '';
+  # };
+  # #ipforwarding for proxmox  
+  # boot.kernel.sysctl = {
+  #   "net.ipv4.ip_forward" = true;
+  # };
+  # #nat masquerade for proxmox
+  # networking.firewall.extraCommands = ''
+  #   iptables -t nat -A POSTROUTING -s 192.168.200.0/24 -o wlo1 -j MASQUERADE
+  #   iptables -t raw -I PREROUTING -i fwbr+ -j CT --zone 1
+  # '';
 
-  services.dnsmasq= {
-    enable = true;
-    settings = {
-    # Add the 'proxmox' domain resolving to your host IP reachable by VMs/containers
-    address = "/proxmox/192.168.0.105";
-    # Bind dnsmasq to your bridge interface vmbr0
-    interface = "vmbr0";
-    # bind-interfaces = true; # Only bind to the specified interface
-    # Define the DHCP IP address range, netmask, and lease time (e.g., 24h)
-    dhcp-range = "192.168.200.2,192.168.200.254,24h";
-    # Specify the router IP (default gateway) for dhcp clients
-    dhcp-option = "3,192.168.200.1";
-    };
-  };
+  # services.dnsmasq= {
+  #   enable = true;
+  #   settings = {
+  #   # Add the 'proxmox' domain resolving to your host IP reachable by VMs/containers
+  #   address = "/proxmox/192.168.0.105";
+  #   # Bind dnsmasq to your bridge interface vmbr0
+  #   interface = "vmbr0";
+  #   # bind-interfaces = true; # Only bind to the specified interface
+  #   # Define the DHCP IP address range, netmask, and lease time (e.g., 24h)
+  #   dhcp-range = "192.168.200.2,192.168.200.254,24h";
+  #   # Specify the router IP (default gateway) for dhcp clients
+  #   dhcp-option = "3,192.168.200.1";
+  #   };
+  # };
 
 
   # Set your time zone.
@@ -276,8 +276,8 @@ services.xserver.enable = true;
     gparted
     ncdu
     unzip
-    newt # for proxmox
-    cdrkit # for proxmox
+    # newt # for proxmox
+    # cdrkit # for proxmox
     cilium-cli
     xclip # use with xclip -out -selection primary | xclip -in -selection clipboard
     dconf-editor
