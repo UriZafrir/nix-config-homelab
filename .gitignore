@@ -1,3 +1,4 @@
 libvirt-vms/.terraform
 libvirt-vms/terraform.tfstate
 libvirt-vms/terraform.tfstate.backup
+libvirt-vms/cluster1/secrets.yaml

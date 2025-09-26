@@ -32,12 +32,8 @@ resource "libvirt_pool" "pool-1" {
 # }
 
 locals {
-    vm_names = ["talos-1"]
-  # vm_names = ["talos-1", "talos-2"]
-  # vm_ips = {
-  #   "talos-1" = "192.168.122.10"
-  #   "talos-2" = "192.168.122.11"
-  # }
+    # vm_names = ["talos-1"]
+  vm_names = ["talos-1", "talos-2", "talos-3"]
 }
 
 resource "libvirt_volume" "vm_disk" {
@@ -47,11 +43,20 @@ resource "libvirt_volume" "vm_disk" {
   format   = "qcow2"
   size     = 25 * 1024 * 1024 * 1024  # 25 GiB
 }
+resource "libvirt_volume" "vm_disk_application_data" {
+  for_each = toset(local.vm_names)
+  name     = "vm-disk-${each.key}-application-data.qcow2"
+  pool     = libvirt_pool.pool-1.name
+  format   = "qcow2"
+  size     = 25 * 1024 * 1024 * 1024  # 25 GiB
+}
+
 
 resource "libvirt_domain" "vm" {
   for_each = toset(local.vm_names)
   name     = each.key
-  memory   = 8192
+  # memory   = 8192
+  memory   = 16384
   vcpu     = 4
 #   qemu_agent = true
 #   autostart  = true
@@ -63,6 +68,9 @@ resource "libvirt_domain" "vm" {
 
   disk {
     volume_id = libvirt_volume.vm_disk[each.key].id
+  }
+  disk {
+    volume_id = libvirt_volume.vm_disk_application_data[each.key].id
   }
   disk {
     file = "/home/uri/Documents/talos-metal-amd64.iso"
