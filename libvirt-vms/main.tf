@@ -62,6 +62,9 @@ resource "libvirt_domain" "vm" {
     file = "/home/uri/Documents/talos-metal-amd64.iso"
   }
 #   depends_on = [libvirt_network.default]
+  boot_device {
+    dev = ["cdrom", "hd", "network"]  # boot from cdrom first, then hd, then network
+  }
 }
 
 
