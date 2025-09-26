@@ -203,7 +203,7 @@ services.xserver.enable = true;
     docker-compose
     minikube
     tree
-  
+    gh
     #weston
     #wlr-randr
     #ddcutil
@@ -284,6 +284,8 @@ services.xserver.enable = true;
     inetutils
     vte
     librechat
+    pciutils
+    
     #for witsy
     dpkg
     fakeroot
@@ -363,6 +365,15 @@ services.xserver.enable = true;
   virtualisation.docker.enable = true;
   virtualisation.waydroid.enable = true;  
   virtualisation.containerd.enable = true;  
+
+  #virt-manager https://nixos.wiki/wiki/Virt-manager
+  programs.virt-manager.enable = true;
+
+  users.groups.libvirtd.members = ["uri"];
+
+  virtualisation.libvirtd.enable = true;
+
+  virtualisation.spiceUSBRedirection.enable = true;
 
 boot.loader.grub = {
   enable = true;

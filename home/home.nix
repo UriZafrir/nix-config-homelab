@@ -31,9 +31,13 @@
       "org/gnome/desktop/input-sources" = {
         xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "grp:alt_shift_toggle" ];
       };
+      "org/virt-manager/virt-manager/connections" = {
+        autoconnect = ["qemu:///system"];
+        uris = ["qemu:///system"];
+      };
     };
   };
-  
+
   systemd.user.services.screen-unlock-monitor = {
       Unit = {
         Description = "Run a command when screen is unlocked (GNOME/X11)";
