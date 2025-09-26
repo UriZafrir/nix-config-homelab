@@ -87,6 +87,10 @@ resource "libvirt_domain" "vm" {
   xml {
     xslt = file("add_spicevmc.xsl")
   }
+  video {
+    type = "virtio"
+  }
+
 }
 
 
