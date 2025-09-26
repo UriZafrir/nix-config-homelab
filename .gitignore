@@ -1,1 +1,3 @@
 libvirt-vms/.terraform
+libvirt-vms/terraform.tfstate
+libvirt-vms/terraform.tfstate.backup
