@@ -2,3 +2,6 @@ libvirt-vms/.terraform
 libvirt-vms/terraform.tfstate
 libvirt-vms/terraform.tfstate.backup
 libvirt-vms/cluster1/secrets.yaml
+libvirt-vms/cluster-config/talosconfig
+libvirt-vms/cluster1/talosconfig
+libvirt-vms/cluster1/nodes
