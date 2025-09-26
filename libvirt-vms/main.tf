@@ -32,11 +32,12 @@ resource "libvirt_pool" "pool-1" {
 # }
 
 locals {
-  vm_names = ["talos-1", "talos-2"]
-  vm_ips = {
-    "talos-1" = "192.168.122.10"
-    "talos-2" = "192.168.122.11"
-  }
+    vm_names = ["talos-1"]
+  # vm_names = ["talos-1", "talos-2"]
+  # vm_ips = {
+  #   "talos-1" = "192.168.122.10"
+  #   "talos-2" = "192.168.122.11"
+  # }
 }
 
 resource "libvirt_volume" "vm_disk" {
@@ -57,7 +58,7 @@ resource "libvirt_domain" "vm" {
 
   network_interface {
     network_name = "default"
-    addresses    = [local.vm_ips[each.key]]
+    # addresses    = [local.vm_ips[each.key]]
   }
 
   disk {
@@ -68,8 +69,13 @@ resource "libvirt_domain" "vm" {
   }
 #   depends_on = [libvirt_network.default]
   boot_device {
-    dev = ["cdrom", "hd", "network"]  # boot from cdrom first, then hd, then network
+    dev = ["cdrom", "hd"]  # boot from cdrom first, then hd, then network
   }
+  cpu {
+    mode = "host-passthrough"
+  }
+    # Override machine type to pc-q35
+    machine = "pc-q35-10.0"
 }
 
 
