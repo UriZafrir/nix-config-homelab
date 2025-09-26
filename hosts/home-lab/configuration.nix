@@ -285,9 +285,8 @@ services.xserver.enable = true;
     vte
     librechat
     pciutils
-    libxslt
     talosctl
-    
+
     #for witsy
     dpkg
     fakeroot
