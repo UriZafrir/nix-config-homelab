@@ -76,6 +76,9 @@ resource "libvirt_domain" "vm" {
   }
     # Override machine type to pc-q35
     machine = "pc-q35-10.0"
+  xml {
+    xslt = file("add_spicevmc.xsl")
+  }
 }
 
 

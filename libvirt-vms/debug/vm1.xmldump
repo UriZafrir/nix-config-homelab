@@ -1,6 +1,6 @@
-<domain type='kvm' id='22'>
+<domain type='kvm' id='24'>
   <name>talos-1</name>
-  <uuid>545dd79d-43ec-4c6a-af6b-48467c5124e8</uuid>
+  <uuid>cc739664-1e73-4501-aad0-0003b92f9de4</uuid>
   <memory unit='KiB'>8388608</memory>
   <currentMemory unit='KiB'>8388608</currentMemory>
   <vcpu placement='static'>4</vcpu>
@@ -99,18 +99,23 @@
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
     <interface type='network'>
-      <mac address='52:54:00:02:10:51'/>
-      <source network='default' portid='ff7ad1fc-e398-46cc-bfeb-8c3f4d0f709c' bridge='virbr0'/>
-      <target dev='vnet13'/>
+      <mac address='52:54:00:ee:6c:42'/>
+      <source network='default' portid='865adf60-c04e-4d69-af23-3c36de598388' bridge='virbr0'/>
+      <target dev='vnet15'/>
       <model type='virtio'/>
       <alias name='net0'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
     </interface>
     <channel type='unix'>
-      <source mode='bind' path='/run/libvirt/qemu/channel/22-talos-1/org.qemu.guest_agent.0'/>
+      <source mode='bind' path='/run/libvirt/qemu/channel/24-talos-1/org.qemu.guest_agent.0'/>
       <target type='virtio' name='org.qemu.guest_agent.0' state='disconnected'/>
       <alias name='channel0'/>
       <address type='virtio-serial' controller='0' bus='0' port='1'/>
+    </channel>
+    <channel type='spicevmc'>
+      <target type='virtio' name='com.redhat.spice.0' state='disconnected'/>
+      <alias name='channel1'/>
+      <address type='virtio-serial' controller='0' bus='0' port='2'/>
     </channel>
     <input type='mouse' bus='ps2'>
       <alias name='input0'/>

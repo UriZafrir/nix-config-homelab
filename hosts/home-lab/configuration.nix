@@ -239,8 +239,8 @@ services.xserver.enable = true;
     uv
     iptables
     postgresql
-    azure-cli
-    (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
+    # azure-cli
+    # (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
     terraform
     #programming
     gcc
@@ -285,6 +285,8 @@ services.xserver.enable = true;
     vte
     librechat
     pciutils
+    libxslt
+    talosctl
     
     #for witsy
     dpkg
