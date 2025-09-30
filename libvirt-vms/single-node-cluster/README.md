@@ -5,3 +5,4 @@ talosctl -n ${NODE_IP} apply-config --insecure --file controlplane.yaml
 export TALOSCONFIG=$PWD/talosconfig
 talosctl -n ${NODE_IP} -e ${NODE_IP} bootstrap
 
+talosctl kubeconfig -n ${NODE_IP} -e ${NODE_IP} -f ~/.kube/config
