@@ -326,7 +326,7 @@ services.xserver.enable = true;
   };
 
   services.k3s = {
-    enable = true;
+    enable = false;
     role = "server";
     extraFlags = [
       "--disable=traefik"
