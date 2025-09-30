@@ -66,7 +66,7 @@
   #     ip link set dev vmbr0 type bridge forward_delay 0
   #   '';
   # };
-  # #ipforwarding for proxmox  
+  # #ipforwarding  
   # boot.kernel.sysctl = {
   #   "net.ipv4.ip_forward" = true;
   # };
@@ -286,6 +286,7 @@ services.xserver.enable = true;
     librechat
     pciutils
     talosctl
+    tcpdump
 
     #for witsy
     dpkg
