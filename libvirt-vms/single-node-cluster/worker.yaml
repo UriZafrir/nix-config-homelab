@@ -4,10 +4,10 @@ persist: true
 # Provides machine specific configuration options.
 machine:
     type: worker # Defines the role of the machine within the cluster.
-    token: s1n5ds.ntkkqlow1fvgss6c # The `token` is used by a machine to join the PKI of the cluster.
+    token: 4t6o2a.k4vsy8r9ohz883jq # The `token` is used by a machine to join the PKI of the cluster.
     # The root certificate authority of the PKI.
     ca:
-        crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJQakNCOGFBREFnRUNBaEFHTTd4VlpjRzA3cERBbysvOVU0ZzJNQVVHQXl0bGNEQVFNUTR3REFZRFZRUUsKRXdWMFlXeHZjekFlRncweU5UQTVNekF3TlRReE1USmFGdzB6TlRBNU1qZ3dOVFF4TVRKYU1CQXhEakFNQmdOVgpCQW9UQlhSaGJHOXpNQ293QlFZREsyVndBeUVBK2NMNTVWSjhDaHdFWkMvSGhuWjRmeWxoU3oxcjBWTTN1UE1zCkMrR3l0RDJqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDaERBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUkKS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVQW1vMUpuUU82aEFjWWJ2dwpJM25zZExNMjlOd3dCUVlESzJWd0EwRUFMNTR1bk9NbjMyTzE1QzNWVTZlbzRlTTJNQ1J6ODBYS2g0M2swU0tKCk53bnV3TzU2ZEhKcTlYZXNZb2dRTkc3SldqazJxSUZnUDhOZ25XQlJNc2VLQnc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+        crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJQakNCOGFBREFnRUNBaEEwekI1cDdMbm95WUtTZnRDeVMxOEZNQVVHQXl0bGNEQVFNUTR3REFZRFZRUUsKRXdWMFlXeHZjekFlRncweU5UQTVNekF5TURNNE5EbGFGdzB6TlRBNU1qZ3lNRE00TkRsYU1CQXhEakFNQmdOVgpCQW9UQlhSaGJHOXpNQ293QlFZREsyVndBeUVBRE54V3V1K3l6TUhhdDVHQjJMa040a1RvYzI5MXYvWHJjT0pKCmxpdHJwTFdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDaERBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUkKS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVSlo1NFR2TDkwQitDd3RXNgpOaHNBV1dLbFhTY3dCUVlESzJWd0EwRUFFRHRwVlRnTXRyM3NqY21IMGE3enR3dzZqOW96OFhBeUVvcVd2Z2h2CkpITHdOekxoSU1uakZlRGd4clYyZlpiRWZjYlV5Sk5laFkxb3FuN1g4RHliQ2c9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
         key: ""
     # Extra certificate subject alternative names for the machine's certificate.
     certSANs: []
@@ -405,11 +405,11 @@ machine:
     #     exampleTaint: exampleTaintValue:NoSchedule
 # Provides cluster specific configuration options.
 cluster:
-    id: n2SpP66LQ2GiBBozzJ4a6RToyFTK93wLkipbIMxcCR4= # Globally unique identifier for this cluster (base64 encoded random 32 bytes).
-    secret: isYtEqJAme3gSFv5X2O+VTvY5j00NTaFkmYzoh5PYIs= # Shared secret of cluster (base64 encoded random 32 bytes).
+    id: zXPOiVU-y5OGV2_Y5xvpu12t7VK0Fa9F49bJJ9rB1f8= # Globally unique identifier for this cluster (base64 encoded random 32 bytes).
+    secret: JfEK3DlhHgagVEmWPhE7aeLHOB/Q7at6AA5ffTEHPBQ= # Shared secret of cluster (base64 encoded random 32 bytes).
     # Provides control plane specific configuration options.
     controlPlane:
-        endpoint: https://192.168.122.206:6443 # Endpoint is the canonical controlplane endpoint, which can be an IP address or a DNS hostname.
+        endpoint: https://192.168.123.99:6443 # Endpoint is the canonical controlplane endpoint, which can be an IP address or a DNS hostname.
     clusterName: single-node-cluster # Configures the cluster's name.
     # Provides cluster specific network configuration options.
     network:
@@ -427,10 +427,10 @@ cluster:
         #     # URLs containing manifests to apply for the CNI.
         #     urls:
         #         - https://docs.projectcalico.org/archive/v3.20/manifests/canal.yaml
-    token: 00ul3p.2gjddfowlhm7yk7b # The [bootstrap token](https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/) used to join the cluster.
+    token: o8tdzf.oxk7quw9142geeid # The [bootstrap token](https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/) used to join the cluster.
     # The base64 encoded root certificate authority used by Kubernetes.
     ca:
-        crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJpVENDQVMrZ0F3SUJBZ0lRS3J4WEhlQUZpZ0JHRGtUMkN6UHBhREFLQmdncWhrak9QUVFEQWpBVk1STXcKRVFZRFZRUUtFd3ByZFdKbGNtNWxkR1Z6TUI0WERUSTFNRGt6TURBMU5ERXhNbG9YRFRNMU1Ea3lPREExTkRFeApNbG93RlRFVE1CRUdBMVVFQ2hNS2EzVmlaWEp1WlhSbGN6QlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VICkEwSUFCSjU4WlllY0FxekxNb3hjSlZFem5ucmpaRTFFWUJ1ait1Vk16WjBCcHNaaENsa2Jwa2t0QlRIcERFMHoKczNMRzZRMG5CWkRsV21DUkxTWHhqNzNmbG1PallUQmZNQTRHQTFVZER3RUIvd1FFQXdJQ2hEQWRCZ05WSFNVRQpGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFCkZnUVVMdXZYbk4rZDkrU3RiSDlsOHNOR3VlOG9lbTR3Q2dZSUtvWkl6ajBFQXdJRFNBQXdSUUlnY1RsWk9tdGsKM1Q3QTF5Z1JBZG1rbnBjUzBCQWtQQys0UDg3WnJxcE5ZR0VDSVFEZForczRaa21tZWdqR1BIZmptWVNCVlB2ZwpDczNzcnBwdS9sSlBWOW14UUE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+        crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJpakNDQVRDZ0F3SUJBZ0lSQUs5K0RBUTkrSEZ5Sjd0SmMreU9raVl3Q2dZSUtvWkl6ajBFQXdJd0ZURVQKTUJFR0ExVUVDaE1LYTNWaVpYSnVaWFJsY3pBZUZ3MHlOVEE1TXpBeU1ETTRORGxhRncwek5UQTVNamd5TURNNApORGxhTUJVeEV6QVJCZ05WQkFvVENtdDFZbVZ5Ym1WMFpYTXdXVEFUQmdjcWhrak9QUUlCQmdncWhrak9QUU1CCkJ3TkNBQVJLYVpCeENMMFgvblVzMy96MC9IWWZKSjFuTEJoWkowTW8xSk55RDNrN0FFZGpyTXJnUXFiYjdNK0IKS2xnTXpPY2lrek5pYnFVazV1cWdBR24yN1ZVdG8yRXdYekFPQmdOVkhROEJBZjhFQkFNQ0FvUXdIUVlEVlIwbApCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPCkJCWUVGTHk5SVBZVVc3NFFvdytjRDB4ZTZqSi8vUlNJTUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSUNuMFZYRmgKZlBxRGJhMTMwY01VNENCR2FVRnFrY2ZuMm1SMEpmd05pUWE3QWlFQTR6MkhBMjN6bWI2SHFYdlFIWmlCLzI1cApNZ2pTeVhYa2J6c1JZdXhsWXgwPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
         key: ""
     # Configures cluster member discovery.
     discovery:
@@ -444,6 +444,7 @@ cluster:
             service: {}
             # # External service endpoint.
             # endpoint: https://discovery.talos.dev/
+    allowSchedulingOnControlPlanes: true # Allows running workload on control-plane nodes.
     
     # # A key used for the [encryption of secret data at rest](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/).
 
@@ -601,6 +602,3 @@ cluster:
     # # Settings for admin kubeconfig generation.
     # adminKubeconfig:
     #     certLifetime: 1h0m0s # Admin kubeconfig certificate lifetime (default is 1 year).
-
-    # # Allows running workload on control-plane nodes.
-    # allowSchedulingOnControlPlanes: true

@@ -48,7 +48,16 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  # boot.kernel.sysctl = {
+  #   "net.ipv4.ip_forward" = true;
+  # };
+  # networking.interfaces.wlan.ipv4.routes = [
+  #   {
+  #     address = "192.168.0.0";      # Destination network
+  #     prefixLength = 16;            # Subnet mask 255.255.0.0
+  #     via = "192.168.0.1";          # Next-hop gateway IP
+  #   }
+  # ];
   #https://github.com/ThomasRives/Proxmox-over-wifi
   #to use proxmox with wifi we need these:
   #bridge for proxmox
