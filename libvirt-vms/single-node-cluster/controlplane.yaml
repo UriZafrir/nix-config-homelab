@@ -460,6 +460,7 @@ cluster:
                 exemptions:
                     namespaces:
                         - kube-system
+                        - metallb-system  # user added
                     runtimeClasses: []
                     usernames: []
                 kind: PodSecurityConfiguration
