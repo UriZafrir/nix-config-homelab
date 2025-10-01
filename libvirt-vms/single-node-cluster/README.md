@@ -41,3 +41,6 @@ helm upgrade --install \
     --set k8sServiceHost=localhost \
     --set k8sServicePort=7445 \
     --set operator.replicas=1
+
+kubectl create ns argocd
+helm upgrade --install argocd argo/argo-cd --version 8.5.7 -n argocd --set server.service.type=NodePort --debug
