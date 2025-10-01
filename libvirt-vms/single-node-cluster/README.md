@@ -22,12 +22,22 @@ talosctl kubeconfig -n ${NODE_IP} -e ${NODE_IP} -f ~/.kube/config
 
 #for reapplying the generated config use without --insecure:
 #talosctl apply-config --endpoints ${NODE_IP} -n ${NODE_IP} -f controlplane.yaml
-helm upgrade --install -n kube-system cilium cilium/cilium --version 1.19.0-pre.0 \
-  --set operator.replicas=1 \
-  --set kubeProxyReplacement=true \
-  --set envoy.enabled=false
 
-cilium:
-  kubeProxyReplacement: true
-  envoy:
-    enabled: false
+
+
+#cilium
+#https://www.talos.dev/v1.11/kubernetes-guides/network/deploying-cilium/
+helm upgrade --install \
+    cilium \
+    cilium/cilium \
+    --version 1.18.0 \
+    --namespace kube-system \
+    --set ipam.mode=kubernetes \
+    --set kubeProxyReplacement=true \
+    --set securityContext.capabilities.ciliumAgent="{CHOWN,KILL,NET_ADMIN,NET_RAW,IPC_LOCK,SYS_ADMIN,SYS_RESOURCE,DAC_OVERRIDE,FOWNER,SETGID,SETUID}" \
+    --set securityContext.capabilities.cleanCiliumState="{NET_ADMIN,SYS_ADMIN,SYS_RESOURCE}" \
+    --set cgroup.autoMount.enabled=false \
+    --set cgroup.hostRoot=/sys/fs/cgroup \
+    --set k8sServiceHost=localhost \
+    --set k8sServicePort=7445 \
+    --set operator.replicas=1

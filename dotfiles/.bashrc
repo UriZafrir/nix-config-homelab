@@ -1,6 +1,8 @@
 # xrandr --output HDMI-1 --brightness 0.23
 alias ll='ls -la'
 alias tf='terraform'
+alias k='kubectl'
+
 #export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 export KUBECONFIG=~/.kube/config
 source ~/.docker-aliases
