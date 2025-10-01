@@ -1,0 +1,11 @@
+cluster:
+  allowSchedulingOnControlPlanes: true
+  proxy:
+    disabled: true
+  apiServer:
+    admissionControl:
+      - name:
+        configuration:
+          exemptions:
+            namespaces:
+              - kube-system
