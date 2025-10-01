@@ -24,7 +24,8 @@ talosctl kubeconfig -n ${NODE_IP} -e ${NODE_IP} -f ~/.kube/config
 #talosctl apply-config --endpoints ${NODE_IP} -n ${NODE_IP} -f controlplane.yaml
 helm upgrade --install -n kube-system cilium cilium/cilium --version 1.19.0-pre.0 \
   --set operator.replicas=1 \
-  --set kubeProxyReplacement=true
+  --set kubeProxyReplacement=true \
+  --set envoy.enabled=false
 
 cilium:
   kubeProxyReplacement: true
