@@ -20,7 +20,7 @@ talosctl -n ${NODE_IP} -e ${NODE_IP} bootstrap
 rm ~/.kube/config
 talosctl kubeconfig -n ${NODE_IP} -e ${NODE_IP} -f ~/.kube/config
 
-
+#for reapplying the generated config use without --insecure:
 #talosctl apply-config --endpoints ${NODE_IP} -n ${NODE_IP} -f controlplane.yaml
 helm upgrade --install -n kube-system cilium cilium/cilium --version 1.19.0-pre.0 \
   --set operator.replicas=1 \
