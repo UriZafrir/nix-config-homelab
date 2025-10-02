@@ -32,7 +32,16 @@
   # system.activationScripts.setDataPerms.text = ''
   # chown -R uri:users /mnt/data
   # '';
-  
+  #https://nixos.wiki/wiki/Storage_optimization
+  #sudo nix-collect-garbage -d
+  #sudo nix-collect-garbage -d
+
+  nix.gc.automatic = true;
+  nix.gc.dates = "03:15";
+  nix.gc.options = "-d";
+  nix.optimise.automatic = true;
+  nix.optimise.dates = [ "03:45" ]; # Optional; allows customizing optimisation schedule
+
   nix = {
     package = pkgs.nixVersions.stable;
     extraOptions = ''
@@ -200,72 +209,45 @@ services.xserver.enable = true;
     traceroute
     dnsutils
     openssl
-    lsof
     imwheel
     killall
-    #kubernetes
     kubectl
     kubernetes-helm
     k9s
-    k3d
     docker
     docker-compose
-    minikube
     tree
     gh
-    #weston
-    #wlr-randr
-    #ddcutil
-
-    #brightness
+    onedrive
     gnome-randr
-
-    #programs
     firefox
-    qbittorrent
-    chromium
     adwaita-icon-theme
     google-chrome
     keepassxc
     remmina
-    flameshot
     gnome-terminal
     efibootmgr
     gnomeExtensions.dash-to-panel
     gnomeExtensions.tiling-shell
     vlc
-    pamixer
-    clipit
     zed-editor
-    tabby
-    i3
     qdirstat
-    # pdfsam-basic
-    # openjfx24
-    # zulu24
     pdfmixtool
     nettools
-    uv
     iptables
-    postgresql
-    # azure-cli
-    # (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
     terraform
+
     #programming
     gcc
     python314
     go
     gnumake
     copyq
-    # vscodium-fhs
-    # vscode-fhs
     vscodium
     vscode
-    envsubst
     nodejs_22
     git-filter-repo
     gnome-tweaks
-    poetry
     python313Packages.pip
     pipx
     rustup
@@ -274,37 +256,65 @@ services.xserver.enable = true;
     xdg-utils
     yarn
     kubeseal
-    runc
-    node-gyp
-    step-cli
     libffi
     pkg-config
     tmux
-    skypilot
     file
     gparted
     ncdu
     unzip
-    # newt # for proxmox
-    # cdrkit # for proxmox
-    cilium-cli
-    xclip # use with xclip -out -selection primary | xclip -in -selection clipboard
     dconf-editor
     inetutils
-    vte
-    librechat
-    pciutils
     talosctl
     tcpdump
-
-    #for witsy
-    dpkg
-    fakeroot
-    zip
 
     #sound
     pavucontrol
     alsa-utils
+
+#unused
+    # k3d
+    # lsof
+    #kubernetes
+    # minikube
+    #weston
+    #wlr-randr
+    #ddcutil
+    #brightness
+    # qbittorrent
+    # chromium
+    # flameshot
+    # pdfsam-basic
+    # openjfx24
+    # zulu24
+    # pamixer
+    # clipit
+    # tabby
+    # i3
+    # poetry
+    # runc
+    # node-gyp
+    # step-cli
+    #for witsy
+    # dpkg
+    # fakeroot
+    # zip
+    # skypilot
+    # vte
+    # librechat
+    # pciutils
+    # newt # for proxmox
+    # cdrkit # for proxmox
+    # cilium-cli
+    # xclip # use with xclip -out -selection primary | xclip -in -selection clipboard
+    # envsubst
+    # vscodium-fhs
+    # vscode-fhs
+    # uv
+    # postgresql
+    # azure-cli
+    # (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
+
   ];
   # services.nfs.server = {
   #     enable = true;
