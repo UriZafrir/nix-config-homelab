@@ -54,7 +54,7 @@
         WantedBy = [ "default.target" ];
       };
     };
-
+#sometimes need /usr/lib/systemd/user
   systemd.user.services.imwheel = {
     Unit = {
       Description = "IMWheel";
