@@ -267,6 +267,7 @@ services.xserver.enable = true;
     inetutils
     talosctl
     tcpdump
+    ghidra-bin
 
     #sound
     pavucontrol
