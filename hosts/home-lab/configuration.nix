@@ -346,7 +346,7 @@ services.xserver.enable = true;
       X11Forwarding = true;
     };
   };
-  # services.tailscale.enable = true; # sudo tailscale up --auth-key=
+  services.tailscale.enable = true; # sudo tailscale up --auth-key=
   services.k3s = {
     enable = false;
     role = "server";
