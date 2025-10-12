@@ -348,7 +348,7 @@ services.xserver.enable = true;
   };
   services.tailscale.enable = true; # sudo tailscale up --auth-key=
   services.k3s = {
-    enable = false;
+    enable = true;
     role = "server";
     extraFlags = [
       "--disable=traefik"
