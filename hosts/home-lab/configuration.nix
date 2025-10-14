@@ -269,7 +269,8 @@ services.xserver.enable = true;
     talosctl
     tcpdump
     ghidra-bin
-
+    kubectx
+    
     #sound
     pavucontrol
     alsa-utils
