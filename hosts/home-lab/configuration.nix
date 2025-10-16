@@ -237,7 +237,8 @@ services.xserver.enable = true;
     iptables
     terraform
     qbittorrent
-
+    ansible
+    
     #programming
     gcc
     python314
@@ -270,7 +271,7 @@ services.xserver.enable = true;
     tcpdump
     ghidra-bin
     kubectx
-    
+
     #sound
     pavucontrol
     alsa-utils
@@ -349,7 +350,7 @@ services.xserver.enable = true;
   };
   services.tailscale.enable = true; # sudo tailscale up --auth-key=
   services.k3s = {
-    enable = true;
+    enable = false;
     role = "server";
     extraFlags = [
       "--disable=traefik"
