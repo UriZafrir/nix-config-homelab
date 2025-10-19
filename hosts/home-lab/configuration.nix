@@ -58,12 +58,18 @@
     };
     networking.interfaces.br0.ipv4.addresses = [ {
       address = "192.168.0.105";
-      prefixLength = 24;
+      prefixLength = 16;
     } ];
     networking.defaultGateway = "192.168.0.1";
     networking.nameservers = ["192.168.0.1" "8.8.8.8"];
+    #disable netfilter on the bridge for communication between host and VMs to work
+    boot.kernel.sysctl = {
+      "net.bridge.bridge-nf-call-iptables" = 0;
+      "net.bridge.bridge-nf-call-ip6tables" = 0;
+      "net.bridge.bridge-nf-call-arptables" = 0;
+    };
 
-  networking.hostName = "nixos"; # Define your hostname.
+    networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
