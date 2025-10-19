@@ -48,6 +48,21 @@
       experimental-features = nix-command flakes
     '';
   };
+  #https://discourse.nixos.org/t/network-bridge-with-static-ip-on-host/15580
+  #for this to work must turn off the ethernet network interface in gnome!
+  networking.useDHCP = false;
+    networking.bridges = {
+      "br0" = {
+        interfaces = [ "enp1s0" ];
+      };
+    };
+    networking.interfaces.br0.ipv4.addresses = [ {
+      address = "192.168.0.105";
+      prefixLength = 24;
+    } ];
+    networking.defaultGateway = "192.168.0.1";
+    networking.nameservers = ["192.168.0.1" "8.8.8.8"];
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -239,7 +254,7 @@ services.xserver.enable = true;
     qbittorrent
     ansible
     awscli2
-    
+
     #programming
     gcc
     python314
