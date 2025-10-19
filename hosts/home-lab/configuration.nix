@@ -238,6 +238,7 @@ services.xserver.enable = true;
     terraform
     qbittorrent
     ansible
+    awscli2
     
     #programming
     gcc
