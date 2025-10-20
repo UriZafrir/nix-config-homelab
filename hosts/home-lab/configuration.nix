@@ -293,7 +293,8 @@ services.xserver.enable = true;
     tcpdump
     ghidra-bin
     kubectx
-
+    argocd
+    
     #sound
     pavucontrol
     alsa-utils
