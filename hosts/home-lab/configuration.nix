@@ -296,6 +296,7 @@ services.xserver.enable = true;
     argocd
     git-crypt
     gnupg
+    envsubst
     
     #sound
     pavucontrol
