@@ -295,9 +295,10 @@ services.xserver.enable = true;
     kubectx
     argocd
     git-crypt
-    gnupg
+    # gnupg
     envsubst
-    
+    pinentry-gnome3
+
     #sound
     pavucontrol
     alsa-utils
@@ -365,6 +366,13 @@ services.xserver.enable = true;
 
   # List services that you want to enable:
   programs.direnv.enable = true;
+
+  # gpg --quick-gen-key urizafrir
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-gnome3;
+    enableSSHSupport = true;
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh = {
