@@ -294,7 +294,9 @@ services.xserver.enable = true;
     ghidra-bin
     kubectx
     argocd
-
+    git-crypt
+    gnupg
+    
     #sound
     pavucontrol
     alsa-utils
