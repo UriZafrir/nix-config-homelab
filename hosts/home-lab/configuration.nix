@@ -298,7 +298,8 @@ services.xserver.enable = true;
     # gnupg
     envsubst
     pinentry-gnome3
-
+    slack
+    
     #sound
     pavucontrol
     alsa-utils
