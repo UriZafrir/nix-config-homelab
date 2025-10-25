@@ -37,7 +37,9 @@
       };
     };
   };
-
+  #debug
+  #systemctl --user status screen-unlock-monitor
+  #systemctl --user restart screen-unlock-monitor
   systemd.user.services.screen-unlock-monitor = {
       Unit = {
         Description = "Run a command when screen is unlocked (GNOME/X11)";

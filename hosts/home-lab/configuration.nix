@@ -293,7 +293,6 @@ services.xserver.enable = true;
     tcpdump
     ghidra-bin
     kubectx
-    argocd
     git-crypt
     # gnupg
     envsubst
