@@ -298,7 +298,8 @@ services.xserver.enable = true;
     envsubst
     pinentry-gnome3
     slack
-    
+    google-cloud-sdk
+
     #sound
     pavucontrol
     alsa-utils
