@@ -441,7 +441,7 @@ boot.loader.grub = {
   efiSupport = true;
   device = "nodev";
 };
-boot.loader.grub.default = 0; # Setting default to the first entry (Ubuntu) as per grub.cfg
+boot.loader.grub.default = 2; # Setting default to the first entry (Ubuntu) as per grub.cfg
 boot.loader.grub.useOSProber = true;
 boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.bluetooth = {
